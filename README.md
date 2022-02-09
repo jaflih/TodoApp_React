@@ -1,20 +1,17 @@
-# React boilerplate
+# Todo App
 
-> One paragraph statement about the project.
+> Todo App is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
-
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- React
+- Webpack
 
 ## Live Demo
 
-[Live Demo Link](https://jihaneh.github.io/)
+[Live Demo Link](https://jihaneh.github.io/TodoApp_React)
 
 ## Getting Started
 
@@ -68,9 +65,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- This project is based on this [tutorial](https://ibaslogic.com/react-tutorial-for-beginners/)
 
 ## 📝 License
 
