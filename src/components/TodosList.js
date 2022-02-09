@@ -9,12 +9,17 @@ export default class TodosList extends Component {
   }
 
   render() {
-    const { todos, handleChangeProps } = this.props;
+    const { todos, handleChangeProps, deleteTodoProps } = this.props;
 
     return (
       <ul>
         {todos.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} handleChangeProps={handleChangeProps} />
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            handleChangeProps={handleChangeProps}
+            deleteTodoProps={deleteTodoProps}
+          />
         ))}
       </ul>
     );
@@ -24,9 +29,11 @@ export default class TodosList extends Component {
 TodosList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.any),
   handleChangeProps: PropTypes.func,
+  deleteTodoProps: PropTypes.func,
 };
 
 TodosList.defaultProps = {
   todos: [],
   handleChangeProps: null,
+  deleteTodoProps: null,
 };
