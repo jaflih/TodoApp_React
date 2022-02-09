@@ -1,16 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class TodoItem extends React.Component {
-  constructor(props) {
-    super(props);
-    console.log();
-  }
+function TodoItem(props) {
+  const { todo } = props;
 
-  render() {
-    const { todo } = this.props;
-    return <li key={todo.id}>{todo.title}</li>;
-  }
+  return <li key={todo.id}>{todo.title}</li>;
 }
 
 TodoItem.propTypes = {
