@@ -4,11 +4,16 @@ import PropTypes from 'prop-types';
 function TodoItem(props) {
   const { todo } = props;
 
-  return <li key={todo.id}>{todo.title}</li>;
+  return (
+    <li key={todo.id}>
+      <input type="checkbox" />
+      {todo.title}
+    </li>
+  );
 }
 
 TodoItem.propTypes = {
-  todo: PropTypes.objectOf,
+  todo: PropTypes.objectOf(PropTypes.any),
 };
 
 TodoItem.defaultProps = {

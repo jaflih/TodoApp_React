@@ -22,7 +22,7 @@ export default class TodosList extends Component {
 }
 
 TodosList.propTypes = {
-  todos: PropTypes.arrayOf,
+  todos: PropTypes.arrayOf(PropTypes.any),
 };
 
 TodosList.defaultProps = {
