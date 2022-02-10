@@ -9,7 +9,9 @@ export default class TodosList extends Component {
   }
 
   render() {
-    const { todos, handleChangeProps, deleteTodoProps } = this.props;
+    const {
+      todos, handleChangeProps, deleteTodoProps, setUpdate,
+    } = this.props;
 
     return (
       <ul>
@@ -19,6 +21,7 @@ export default class TodosList extends Component {
             todo={todo}
             handleChangeProps={handleChangeProps}
             deleteTodoProps={deleteTodoProps}
+            setUpdate={setUpdate}
           />
         ))}
       </ul>
@@ -30,10 +33,12 @@ TodosList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.any),
   handleChangeProps: PropTypes.func,
   deleteTodoProps: PropTypes.func,
+  setUpdate: PropTypes.func,
 };
 
 TodosList.defaultProps = {
   todos: [],
   handleChangeProps: null,
   deleteTodoProps: null,
+  setUpdate: null,
 };
