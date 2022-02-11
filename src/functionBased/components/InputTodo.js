@@ -1,27 +1,18 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-class InputTodo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: '',
-    };
-  }
+const InputTodo = (props) => {
+  const [inputText, setInputText] = useState({
+    title: '',
+  });
 
-  onChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  handleSubmit = (e) => {
-    const { addTodoProps } = this.props;
-    const { title } = this.state;
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (title.trim()) {
-      addTodoProps(title);
-      this.setState({
+    const { addTodoProps } = props;
+
+    if (inputText.title.trim()) {
+      addTodoProps(inputText.title);
+      setInputText({
         title: '',
       });
     } else {
@@ -29,24 +20,29 @@ class InputTodo extends Component {
     }
   };
 
-  render() {
-    const { title } = this.state;
-    return (
-      <form onSubmit={this.handleSubmit} className="form-container">
-        <input
-          type="text"
-          placeholder="Add todo..."
-          value={title}
-          name="title"
-          onChange={this.onChange}
-        />
-        <button className="input-submit" type="button" onClick={(e) => this.handleSubmit(e)}>
-          Submit
-        </button>
-      </form>
-    );
-  }
-}
+  const onChange = (e) => {
+    setInputText({
+      ...inputText,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="form-container">
+      <input
+        type="text"
+        className="input-text"
+        placeholder="Add todo..."
+        value={inputText.title}
+        name="title"
+        onChange={onChange}
+      />
+      <button type="button" className="input-submit">
+        Submit
+      </button>
+    </form>
+  );
+};
 
 InputTodo.propTypes = {
   addTodoProps: PropTypes.func,
@@ -55,5 +51,4 @@ InputTodo.propTypes = {
 InputTodo.defaultProps = {
   addTodoProps: null,
 };
-
 export default InputTodo;
