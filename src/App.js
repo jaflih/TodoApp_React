@@ -1,6 +1,4 @@
-import {
-  BrowserRouter, Routes, Route, Link,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TodoContainer from './functionBased/components/TodoContainer';
 import About from './functionBased/pages/About';
 import NotMatch from './functionBased/pages/NotMatch';
@@ -17,13 +15,6 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-        <h1>React Router</h1>
-
-        <nav>
-          <Link to="/todos">Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/abouts">Dynamics routes</Link>
-        </nav>
         <Routes>
           <Route index element={<TodoContainer />} />
           <Route path="/todos" element={<TodoContainer />} />

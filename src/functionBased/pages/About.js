@@ -3,18 +3,16 @@ import { Link, Outlet } from 'react-router-dom';
 import Navbar from './Navbar';
 
 const About = () => (
-  <div>
+  <div className="container">
     <Navbar />
     <div>hello from about page</div>
     <div>
-      <ul>
-        <li>
-          <Link to="about-app">About App</Link>
-        </li>
-        <li>
-          <Link to="about-author">About Author</Link>
-        </li>
-      </ul>
+      <div>
+        <Link to="about-app">About App</Link>
+      </div>
+      <div>
+        <Link to="about-author">About Author</Link>
+      </div>
       <Outlet />
     </div>
   </div>
