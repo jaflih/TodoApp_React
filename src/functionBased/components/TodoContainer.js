@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Navbar from '../pages/Navbar';
 import Header from './Header';
 import InputTodo from './InputTodo';
 import TodosList from './TodosList';
@@ -57,6 +58,7 @@ const TodoContainer = () => {
 
   return (
     <div className="container">
+      <Navbar />
       <div className="inner">
         <Header />
         <InputTodo addTodoProps={addTodoItem} />
