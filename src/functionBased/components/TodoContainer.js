@@ -6,11 +6,11 @@ import InputTodo from './InputTodo';
 import TodosList from './TodosList';
 
 const TodoContainer = () => {
-  function getInitialTodos() {
+  const getInitialTodos = () => {
     const temp = localStorage.getItem('todos');
     const savedTodos = JSON.parse(temp);
     return savedTodos || [];
-  }
+  };
 
   const [todos, setTodos] = useState(getInitialTodos());
 
