@@ -9,19 +9,20 @@
 - React
 - Webpack
 
-## Live Demo
-
-[Live Demo Link](https://jihaneh.github.io/TodoApp_React)
-
 ## Getting Started
 
-In the project directory, you can run:
+### Get a local copy of the project
+
+`git clone https://github.com/jihaneH/TodoApp_React.git`
+
 
 ### Install
 
+`cd TodoApp_React`
+
 `npm install`
 
-Install the app with its dependencies.\
+Install the app with its dependencies.
 
 ### Runs the app in the development mode
 
