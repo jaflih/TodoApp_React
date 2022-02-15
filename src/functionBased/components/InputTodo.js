@@ -38,7 +38,10 @@ const InputTodo = (props) => {
         required
       />
       <button type="button" className="input-submit">
-        <FaPlusCircle style={{ color: 'darkcyan', fontSize: '20px', marginTop: '2px' }} />
+        <FaPlusCircle
+          style={{ color: 'darkcyan', fontSize: '20px', marginTop: '2px' }}
+          onClick={handleSubmit}
+        />
       </button>
     </form>
   );
