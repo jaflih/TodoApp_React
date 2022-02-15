@@ -1,29 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TodoContainer from './functionBased/components/TodoContainer';
+import About from './functionBased/pages/About';
+import NotMatch from './functionBased/pages/NotMatch';
+import SinglePage from './functionBased/pages/SinglePage';
+import DynamicPage from './functionBased/pages/DynamicPage';
+import User from './functionBased/pages/User';
 
-function App() {
+const App = () => {
+  const users = [
+    { id: '1', fullName: 'Robin Wieruch' },
+    { id: '2', fullName: 'Sarah Finnley' },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<TodoContainer />} />
+          <Route path="/todos" element={<TodoContainer />} />
+          <Route path="/about" element={<About />}>
+            <Route path="about-app" element={<SinglePage />} />
+            <Route path="about-author" element={<SinglePage />} />
+          </Route>
+          <Route path="/abouts" element={<DynamicPage users={users} />}>
+            <Route path=":userId" element={<User />} />
+          </Route>
+          <Route path="*" element={<NotMatch />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
