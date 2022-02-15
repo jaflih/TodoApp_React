@@ -16,8 +16,6 @@ const InputTodo = (props) => {
       setInputText({
         title: '',
       });
-    } else {
-      alert('Please write item');
     }
   };
 
@@ -37,6 +35,7 @@ const InputTodo = (props) => {
         value={inputText.title}
         name="title"
         onChange={onChange}
+        required
       />
       <button type="button" className="input-submit">
         <FaPlusCircle style={{ color: 'darkcyan', fontSize: '20px', marginTop: '2px' }} />
